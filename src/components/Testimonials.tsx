@@ -5,25 +5,25 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    location: "New York, NY",
-    avatar: "SJ",
-    text: "The beachfront villa exceeded all our expectations. The views were stunning, and the amenities were top-notch. We'll definitely be coming back next year!",
+    name: "Elizabeth",
+    location: "Guest",
+    avatar: "E",
+    text: "This is a very well maintained house and thoughtfully decorated. Kids loved the games at the house and enjoyed using the sifter to look for sharks teeth at Manasota beach. Would definitely recommend!",
     rating: 5
   },
   {
-    name: "Michael Roberts",
-    location: "Chicago, IL",
-    avatar: "MR",
-    text: "Our stay at the mountain cabin was unforgettable. The booking process was seamless, and the property was even better than the pictures. Perfect getaway!",
+    name: "Alex",
+    location: "Guest",
+    avatar: "A",
+    text: "Our family enjoyed our stay! We loved the location and how close it was to everything we enjoy in Venice! The house was clean and cozy and has everything you need!",
     rating: 5
   },
   {
-    name: "Jennifer Lee",
-    location: "San Francisco, CA",
-    avatar: "JL",
-    text: "The downtown loft was in the perfect location for our weekend trip. Modern, clean, and stylish - exactly what we were looking for. Highly recommend!",
-    rating: 4
+    name: "Chastity",
+    location: "Guest",
+    avatar: "C",
+    text: "We have rented several times through AirBnb and this home takes the cake. If we are ever back in Venice we will look here before all else for our accommodations!",
+    rating: 5
   }
 ];
 
