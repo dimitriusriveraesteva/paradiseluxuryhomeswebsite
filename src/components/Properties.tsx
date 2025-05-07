@@ -33,6 +33,13 @@ const Properties = () => {
             <PropertyCard {...properties[0]} />
           </div>
         </div>
+        
+        <div className="mt-10 max-w-3xl mx-auto bg-accent/20 p-6 rounded-lg border border-accent/30">
+          <h3 className="text-xl font-semibold mb-3">Discover the Perfect Location</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Escape to this beautifully renovated coastal retreat—just 10 minutes from Caspersen and Venice Beach, and only 30 minutes from world-famous Siesta Key Beach! Explore Shamrock Park's trails, golf, bike, or fish with gear and bikes provided. Unwind at home with a fully stocked kitchen and grill, or discover Venice's boutiques, galleries, and theaters. State parks and Sarasota gems like the Ringling Museum and Mote Aquarium are a short drive away. Beach gear and towels included!
+          </p>
+        </div>
       </div>
     </section>
   );
