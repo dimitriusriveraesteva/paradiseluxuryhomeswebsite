@@ -64,7 +64,6 @@ const Navbar = () => {
           <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
             Contact
           </a>
-          <ThemeToggle />
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
@@ -73,48 +72,47 @@ const Navbar = () => {
         </div>
 
         {/* Mobile navigation */}
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <nav className="flex flex-col gap-4 mt-8">
-              <a href="/" className="flex items-center gap-2 mb-4">
-                <img 
-                  src="/lovable-uploads/78c40790-d058-4b0f-9727-290d96d64840.png" 
-                  alt="Paradise Luxe Homes Logo" 
-                  className="h-8 w-auto"
-                />
-                <span className="font-display text-lg font-bold">
-                  Paradise Luxe Homes
-                </span>
-              </a>
-              <a href="#properties" className="text-lg font-medium hover:text-primary transition-colors">
-                Properties
-              </a>
-              <a href="#amenities" className="text-lg font-medium hover:text-primary transition-colors">
-                Amenities
-              </a>
-              <a href="#gallery" className="text-lg font-medium hover:text-primary transition-colors">
-                Gallery
-              </a>
-              <a href="#reviews" className="text-lg font-medium hover:text-primary transition-colors">
-                Reviews
-              </a>
-              <a href="#contact" className="text-lg font-medium hover:text-primary transition-colors">
-                Contact
-              </a>
-              <div className="flex items-center gap-2 mt-4">
-                <ThemeToggle />
-                <span className="text-sm">Toggle theme</span>
-              </div>
-              <Button className="mt-4 w-full" onClick={openBookingModal}>Book Now</Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <nav className="flex flex-col gap-4 mt-8">
+                <a href="/" className="flex items-center gap-2 mb-4">
+                  <img 
+                    src="/lovable-uploads/78c40790-d058-4b0f-9727-290d96d64840.png" 
+                    alt="Paradise Luxe Homes Logo" 
+                    className="h-8 w-auto"
+                  />
+                  <span className="font-display text-lg font-bold">
+                    Paradise Luxe Homes
+                  </span>
+                </a>
+                <a href="#properties" className="text-lg font-medium hover:text-primary transition-colors">
+                  Properties
+                </a>
+                <a href="#amenities" className="text-lg font-medium hover:text-primary transition-colors">
+                  Amenities
+                </a>
+                <a href="#gallery" className="text-lg font-medium hover:text-primary transition-colors">
+                  Gallery
+                </a>
+                <a href="#reviews" className="text-lg font-medium hover:text-primary transition-colors">
+                  Reviews
+                </a>
+                <a href="#contact" className="text-lg font-medium hover:text-primary transition-colors">
+                  Contact
+                </a>
+                <Button className="mt-4 w-full" onClick={openBookingModal}>Book Now</Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
       
       <BookingModal 
