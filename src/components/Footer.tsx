@@ -58,8 +58,6 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Contact Us</h4>
             <address className="not-italic text-gray-300 space-y-2">
               <p>Paradise Luxury Homes, LLC</p>
-              <p>Queen Street Location</p>
-              <p className="mt-2"><a href="tel:+15551234567" className="hover:text-white transition-colors">+1 (555) 123-4567</a></p>
               <p><a href="mailto:info@paradiseluxuryhomes.com" className="hover:text-white transition-colors">info@paradiseluxuryhomes.com</a></p>
             </address>
           </div>
