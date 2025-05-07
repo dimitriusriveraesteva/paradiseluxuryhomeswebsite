@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import BookingModal from './BookingModal';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +21,10 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const openBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
 
   return (
     <header 
@@ -53,7 +59,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button>Book Now</Button>
+          <Button onClick={openBookingModal}>Book Now</Button>
         </div>
 
         {/* Mobile navigation */}
@@ -81,11 +87,16 @@ const Navbar = () => {
               <a href="#contact" className="text-lg font-medium hover:text-primary transition-colors">
                 Contact
               </a>
-              <Button className="mt-4 w-full">Book Now</Button>
+              <Button className="mt-4 w-full" onClick={openBookingModal}>Book Now</Button>
             </nav>
           </SheetContent>
         </Sheet>
       </div>
+      
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </header>
   );
 };
