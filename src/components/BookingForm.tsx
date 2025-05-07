@@ -1,10 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -45,11 +45,11 @@ const formSchema = z.object({
   guests: z.string().min(1, {
     message: "Please select the number of guests.",
   }),
-  // Removed property field from the schema
 });
 
 const BookingForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -58,16 +58,40 @@ const BookingForm = () => {
       email: "",
       phone: "",
       guests: "",
-      // Removed property default value
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
     console.log(values);
+    
+    // Format the dates for better readability
+    const formattedCheckIn = format(values.checkIn, "PPP");
+    const formattedCheckOut = format(values.checkOut, "PPP");
+    
+    // Create email content
+    const emailSubject = encodeURIComponent(`Booking Request from ${values.name}`);
+    const emailBody = encodeURIComponent(
+      `New Booking Request for Paradise on Queen\n\n` +
+      `Name: ${values.name}\n` +
+      `Email: ${values.email}\n` +
+      `Phone: ${values.phone}\n` +
+      `Check-in Date: ${formattedCheckIn}\n` +
+      `Check-out Date: ${formattedCheckOut}\n` +
+      `Number of Guests: ${values.guests}\n\n` +
+      `This request was submitted from the Paradise on Queen website.`
+    );
+    
+    // Open default email client
+    window.location.href = `mailto:management@paradiseluxehomes.com?subject=${emailSubject}&body=${emailBody}`;
+    
+    // Show success toast
     toast({
       title: "Booking Request Submitted",
       description: "We'll contact you shortly to confirm your booking for Paradise on Queen.",
     });
+    
+    setIsSubmitting(false);
     form.reset();
   }
 
@@ -262,8 +286,20 @@ const BookingForm = () => {
                     </FormItem>
                   )}
                 />
-                {/* Property selection dropdown removed */}
-                <Button type="submit" className="w-full mt-2">Submit Booking Request</Button>
+                <Button 
+                  type="submit" 
+                  className="w-full mt-2" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Submit Booking Request"
+                  )}
+                </Button>
               </form>
             </Form>
           </div>
