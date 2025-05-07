@@ -42,7 +42,7 @@ const Hero = () => {
             "Paradise on Queen"
           </h2>
           <p className="animate-fade-up text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            Experience luxury, comfort, and stunning views in our beautifully curated property designed for your unforgettable stay.
+            Experience luxury and comfort in our beautifully renovated coastal retreat, just minutes from Venice Beach and Siesta Key. Your perfect Florida getaway awaits!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
