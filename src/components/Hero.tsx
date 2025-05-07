@@ -1,8 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import BookingModal from './BookingModal';
 
 const Hero = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const openBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   return (
     <section className="relative pt-16 pb-20 md:pb-32 md:pt-24 lg:pb-40 lg:pt-36">
       {/* Background image with overlay */}
@@ -31,15 +38,30 @@ const Hero = () => {
             Experience luxury, comfort, and stunning views in our beautifully curated property designed for your unforgettable stay.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <Button 
+              size="lg" 
+              className="animate-fade-up" 
+              style={{ animationDelay: '0.2s' }}
+              onClick={openBookingModal}
+            >
               Book Your Stay
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/20 hover:bg-white/30 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-white/20 hover:bg-white/30 animate-fade-up" 
+              style={{ animationDelay: '0.3s' }}
+            >
               View Property
             </Button>
           </div>
         </div>
       </div>
+
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </section>
   );
 };
