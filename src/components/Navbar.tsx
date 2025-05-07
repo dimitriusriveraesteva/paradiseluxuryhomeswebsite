@@ -37,11 +37,11 @@ const Navbar = () => {
           <a href="/" className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/78c40790-d058-4b0f-9727-290d96d64840.png" 
-              alt="Paradise Luxury Homes Logo" 
+              alt="Paradise Luxe Homes Logo" 
               className="h-10 w-auto"
             />
             <span className="font-display text-xl md:text-2xl font-bold">
-              Paradise Luxury Homes
+              Paradise Luxe Homes
             </span>
           </a>
         </div>
@@ -82,11 +82,11 @@ const Navbar = () => {
               <a href="/" className="flex items-center gap-2 mb-4">
                 <img 
                   src="/lovable-uploads/78c40790-d058-4b0f-9727-290d96d64840.png" 
-                  alt="Paradise Luxury Homes Logo" 
+                  alt="Paradise Luxe Homes Logo" 
                   className="h-8 w-auto"
                 />
                 <span className="font-display text-lg font-bold">
-                  Paradise Luxury Homes
+                  Paradise Luxe Homes
                 </span>
               </a>
               <a href="#properties" className="text-lg font-medium hover:text-primary transition-colors">

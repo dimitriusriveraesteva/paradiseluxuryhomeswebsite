@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h1 className="animate-fade-in heading-1 mb-6">
-            Paradise Luxury Homes
+            Paradise Luxe Homes
           </h1>
           <p className="animate-fade-up text-lg md:text-xl opacity-90 mb-4 max-w-2xl mx-auto">
             Featuring our exclusive property
