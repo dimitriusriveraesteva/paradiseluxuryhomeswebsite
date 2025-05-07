@@ -6,21 +6,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const testimonials = [
   {
     name: "Elizabeth",
-    location: "Guest",
+    location: "Nashville, Tennessee",
     avatar: "E",
     text: "This is a very well maintained house and thoughtfully decorated. Kids loved the games at the house and enjoyed using the sifter to look for sharks teeth at Manasota beach. Would definitely recommend!",
     rating: 5
   },
   {
     name: "Alex",
-    location: "Guest",
+    location: "Flint, Michigan",
     avatar: "A",
     text: "Our family enjoyed our stay! We loved the location and how close it was to everything we enjoy in Venice! The house was clean and cozy and has everything you need!",
     rating: 5
   },
   {
     name: "Chastity",
-    location: "Guest",
+    location: "Pace, Florida",
     avatar: "C",
     text: "We have rented several times through AirBnb and this home takes the cake. If we are ever back in Venice we will look here before all else for our accommodations!",
     rating: 5
