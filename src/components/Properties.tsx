@@ -16,7 +16,7 @@ const properties = [
     bathrooms: 2,
     beds: 4,
     guests: 6,
-    bedDetails: "King in master, Queen in guest room, Queen sofa bed, Full sofa bed",
+    bedDetails: "King in master, Queen in guest room, Queen sofa bed in living room, Full sofa bed in sunroom",
     isAvailable: true,
     featured: true
   }
