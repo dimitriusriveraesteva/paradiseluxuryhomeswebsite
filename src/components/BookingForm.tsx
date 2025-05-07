@@ -45,9 +45,7 @@ const formSchema = z.object({
   guests: z.string().min(1, {
     message: "Please select the number of guests.",
   }),
-  property: z.string().min(1, {
-    message: "Please select a property.",
-  }),
+  // Removed property field from the schema
 });
 
 const BookingForm = () => {
@@ -60,7 +58,7 @@ const BookingForm = () => {
       email: "",
       phone: "",
       guests: "",
-      property: "",
+      // Removed property default value
     },
   });
 
@@ -68,7 +66,7 @@ const BookingForm = () => {
     console.log(values);
     toast({
       title: "Booking Request Submitted",
-      description: "We'll contact you shortly to confirm your booking.",
+      description: "We'll contact you shortly to confirm your booking for Paradise on Queen.",
     });
     form.reset();
   }
@@ -80,7 +78,7 @@ const BookingForm = () => {
           <div>
             <h2 className="heading-2 mb-4">Book Your Stay</h2>
             <p className="text-muted-foreground mb-6">
-              Fill out the form below to request a booking at one of our properties. We'll get back to you shortly to confirm availability and answer any questions.
+              Fill out the form below to request a booking at Paradise on Queen. We'll get back to you shortly to confirm availability and answer any questions.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -97,8 +95,8 @@ const BookingForm = () => {
                   <span className="font-bold">2</span>
                 </div>
                 <div>
-                  <h3 className="font-medium">Select a property</h3>
-                  <p className="text-sm text-muted-foreground">Choose from our available properties</p>
+                  <h3 className="font-medium">Tell us about your group</h3>
+                  <p className="text-sm text-muted-foreground">Let us know how many guests will be staying</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -239,55 +237,32 @@ const BookingForm = () => {
                     )}
                   />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="guests"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Guests</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select guests" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="1">1 Guest</SelectItem>
-                            <SelectItem value="2">2 Guests</SelectItem>
-                            <SelectItem value="3">3 Guests</SelectItem>
-                            <SelectItem value="4">4 Guests</SelectItem>
-                            <SelectItem value="5">5 Guests</SelectItem>
-                            <SelectItem value="6">6+ Guests</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="property"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Property</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select property" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="luxury-beachfront">Luxury Beachfront Villa</SelectItem>
-                            <SelectItem value="mountain-cabin">Mountain Cabin Retreat</SelectItem>
-                            <SelectItem value="downtown-loft">Downtown Modern Loft</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="guests"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Number of Guests</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select guests" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="1">1 Guest</SelectItem>
+                          <SelectItem value="2">2 Guests</SelectItem>
+                          <SelectItem value="3">3 Guests</SelectItem>
+                          <SelectItem value="4">4 Guests</SelectItem>
+                          <SelectItem value="5">5 Guests</SelectItem>
+                          <SelectItem value="6">6 Guests</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* Property selection dropdown removed */}
                 <Button type="submit" className="w-full mt-2">Submit Booking Request</Button>
               </form>
             </Form>
