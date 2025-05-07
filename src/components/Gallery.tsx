@@ -25,6 +25,9 @@ const Gallery = () => {
     exterior: [
       "/lovable-uploads/77470247-5762-4f84-9151-44ab64ae0ca0.png", // Aerial view of neighborhood with ocean
       "/lovable-uploads/1485efdd-908a-4514-8568-4203981d5506.png", // Existing exterior image
+      "/lovable-uploads/dc1d6872-601f-4955-be6b-46f03d4f4b9f.png", // New front porch with rocking chairs
+      "/lovable-uploads/3edda6e3-ebbb-4a18-b96e-6d763aefb588.png", // New house exterior with palm trees
+      "/lovable-uploads/c114a681-cc7d-42ca-8a9d-0060f7d356a5.png", // New aerial neighborhood view
     ],
     amenities: [
       "/lovable-uploads/bb32a8a3-37f1-4a7c-b9e6-a5a814099210.png", // Living room from another angle
