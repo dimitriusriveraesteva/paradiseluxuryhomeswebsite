@@ -10,6 +10,13 @@ const Hero = () => {
     setIsBookingModalOpen(true);
   };
 
+  const scrollToGallery = () => {
+    const gallerySection = document.getElementById('gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative pt-16 pb-20 md:pb-32 md:pt-24 lg:pb-40 lg:pt-36">
       {/* Background image with overlay */}
@@ -51,6 +58,7 @@ const Hero = () => {
               variant="outline" 
               className="bg-white/20 hover:bg-white/30 animate-fade-up" 
               style={{ animationDelay: '0.3s' }}
+              onClick={scrollToGallery}
             >
               View Property
             </Button>
