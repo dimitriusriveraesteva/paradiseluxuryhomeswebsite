@@ -9,10 +9,15 @@ import BookingModal from './BookingModal';
 interface PropertyCardProps {
   title: string;
   location: string;
-  price: number;
+  price: {
+    low: number;
+    high: number;
+  } | number;
   image: string;
   bedrooms: number;
   bathrooms: number;
+  beds?: number;
+  bedDetails?: string;
   guests: number;
   isAvailable?: boolean;
   featured?: boolean;
@@ -25,11 +30,18 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   image,
   bedrooms,
   bathrooms,
+  beds,
+  bedDetails,
   guests,
   isAvailable = true,
   featured = false,
 }) => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  // Format price display
+  const priceDisplay = typeof price === 'object' 
+    ? `$${price.low} - $${price.high}` 
+    : `$${price}`;
 
   return (
     <>
@@ -53,16 +65,16 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
               <CardDescription>{location}</CardDescription>
             </div>
             <div className="text-right">
-              <span className="font-bold text-lg">${price}</span>
+              <span className="font-bold text-lg">{priceDisplay}</span>
               <CardDescription>/night</CardDescription>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex justify-between text-sm text-muted-foreground">
+          <div className="flex justify-between text-sm text-muted-foreground mb-2">
             <div className="flex items-center gap-1">
               <Bed className="h-4 w-4" />
-              <span>{bedrooms} Bed{bedrooms > 1 ? 's' : ''}</span>
+              <span>{bedrooms} Bedroom{bedrooms > 1 ? 's' : ''}</span>
             </div>
             <div className="flex items-center gap-1">
               <Bath className="h-4 w-4" />
@@ -73,6 +85,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
               <span>{guests} Guest{guests > 1 ? 's' : ''}</span>
             </div>
           </div>
+          
+          {bedDetails && (
+            <div className="text-sm text-muted-foreground mt-2 bg-secondary/20 p-2 rounded">
+              <span className="font-medium">Sleeping arrangements:</span> {bedDetails}
+            </div>
+          )}
         </CardContent>
         <CardFooter className="flex justify-between items-center">
           <div className="flex items-center gap-1">

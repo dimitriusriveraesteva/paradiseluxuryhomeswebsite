@@ -6,12 +6,17 @@ const properties = [
   {
     id: 1,
     title: "Paradise on Queen",
-    location: "Queen Street, Downtown",
-    price: 350,
+    location: "South Venice, FL",
+    price: {
+      low: 150,
+      high: 350
+    },
     image: "/lovable-uploads/5fc3aaba-9046-4c4e-aec3-995d6097c6da.png",
-    bedrooms: 3,
+    bedrooms: 2,
     bathrooms: 2,
+    beds: 4,
     guests: 6,
+    bedDetails: "King in master, Queen in guest room, Queen sofa bed, Full sofa bed",
     isAvailable: true,
     featured: true
   }
