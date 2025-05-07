@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between py-4">
         <div className="flex items-center gap-2">
           <a href="/" className="font-display text-xl md:text-2xl font-bold">
-            StayEscape
+            Paradise Luxury Homes
           </a>
         </div>
 
