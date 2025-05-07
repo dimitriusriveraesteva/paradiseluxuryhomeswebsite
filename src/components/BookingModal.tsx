@@ -23,12 +23,16 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             Select your dates and complete your reservation
           </DialogDescription>
         </DialogHeader>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-4 flex items-center justify-center">
           <iframe 
             id="booking-iframe" 
             sandbox="allow-top-navigation allow-scripts allow-same-origin" 
             className="w-full h-[700px] rounded-md shadow-sm"
-            style={{ display: 'block', maxWidth: '100%' }}
+            style={{ 
+              display: 'block',
+              margin: '0 auto',
+              maxWidth: '100%'
+            }}
             frameBorder="0" 
             src="https://booking.hospitable.com/widget/fd7f5f40-7ea7-460f-869c-9f830039b194/1261776"
           />
