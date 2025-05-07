@@ -29,7 +29,7 @@ const Gallery = () => {
     amenities: [
       "/lovable-uploads/bb32a8a3-37f1-4a7c-b9e6-a5a814099210.png", // Living room from another angle
       "/lovable-uploads/1485efdd-908a-4514-8568-4203981d5506.png", // Existing amenities image
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-1.2.1&q=85&w=800",
+      "/lovable-uploads/62d94465-1530-4055-94bc-b679a840bf1c.png", // New outdoor patio with gazebo image
     ]
   };
 
