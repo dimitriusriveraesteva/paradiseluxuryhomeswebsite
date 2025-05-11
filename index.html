@@ -26,6 +26,16 @@
 
   <body>
     <div id="root"></div>
+    <!-- Desktop-only GPT Engineer script -->
+    <script>
+      // Only load the GPT Engineer script on desktop devices
+      if (window.innerWidth >= 768) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.gpteng.co/gptengineer.js';
+        script.type = 'module';
+        document.body.appendChild(script);
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
